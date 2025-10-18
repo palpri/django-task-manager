@@ -13,19 +13,25 @@ A RESTful API for a simple task manager application using Django. The API allow 
 - **Filtering & Sorting (Optional):** 
   - Filter tasks by completion status or sort by creation date.
 - **Validation:** 
-  - Input validation to ensure data integrity.
+  - User authentication using JWT (JSON Web Token)
+- **Pagination:** 
+  - Pagination has implemented
+- **Swagger API Documentation:** 
+- **Unit tests with coverage support:** 
 
+## ⚙️ Tech Stack
 
+| Layer | Tool |
+|-------|------|
+| Framework | Django 5.x |
+| API Layer | Django REST Framework |
+| Authentication | JWT via`djangorestframework-simplejwt` |
+| Filtering | `django-filter` |
+| Documentation | `drf-yasg` (Swagger UI / ReDoc) |
+| Database | SQLite (default) |
+| Testing | Django’s `unittest` + DRF Test Client |
 
 ## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.10 (AWS Glue 5.0 compatible)
-- AWS CLI configured with appropriate permissions
-- Access to Salesforce with Bulk API permissions
-- Aurora PostgreSQL database configured
-- Terraform 1.9+ installed (for infrastructure deployment)
 
 ### Environment Setup
 
@@ -68,9 +74,9 @@ django-task-manager/
 │     ├── __init__.py
 │     ├── admin.py
 │     ├── apps.py
-│     ├── models.py
+│     ├── models.py  #Task model
 │     ├── serializers.py
-│     ├── views.py
+│     ├── views.py  #CRUD logic
 │     ├── urls.py
 │     └── tests.py
 └── users/ # app for registration/login

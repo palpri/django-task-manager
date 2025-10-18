@@ -1,11 +1,15 @@
 from rest_framework import generics, permissions
 from .models import Task
 from .serializers import TaskSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class TaskListCreateAPIView(generics.ListCreateAPIView):
     queryset = Task.objects.all().order_by('-created_at')
     serializer_class = TaskSerializer
+    
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['completed'] 
 
 
 # Allow list to be read by anyone; creation requires authentication

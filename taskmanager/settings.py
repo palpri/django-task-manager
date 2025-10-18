@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drf_yasg',
+    'django_filters', 
     'tasks',
     'users',
 ]
@@ -58,6 +59,8 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = []
 
+
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -68,12 +71,29 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # DRF + SimpleJWT configuration
 REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'taskmanager.utils.custom_exception_handler',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
+     'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',  # for API responses
+     ),
+     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+      'PAGE_SIZE': 5,
+      
+      'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ),
+     
+     
+     
+     
+     
 }
 
 # SimpleJWT settings (optional tweaks)
