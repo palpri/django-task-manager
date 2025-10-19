@@ -89,3 +89,15 @@ django-task-manager/
 ├── .gitignore                      # Git ignore patterns
 └── README.md                       # This file
 
+```
+## Check Code Coverage 
+
+```bash
+#install dependencies
+pip install coverage
+
+#Generate detailed HTML report
+coverage html
+
+#specific file test
+python manage.py test users/tasks
