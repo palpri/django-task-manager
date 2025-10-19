@@ -64,30 +64,31 @@ python manage.py runserver  # Django
 django-task-manager/
 ├── manage.py
 ├── requirements.txt
-├── taskmanager/ # project package 
+├── taskmanager/                                # project package 
 │         ├──  __init__.py
-│         ├── settings.py
-│         ├── urls.py
-│         └── urls.py
+│         ├── settings.py                       #Global project settings (apps, middleware, DB, REST config)
+│         ├── utils.py                          #Custom utilities like global exception handler
+│         ├── wsgi.py 
+│         └── urls.py                          #Root URL routes — connects global URLs to app URLs
 ├── tasks/ 
 │     ├── migrations/
 │     ├── __init__.py
-│     ├── admin.py
-│     ├── apps.py
-│     ├── models.py  #Task model
-│     ├── serializers.py
-│     ├── views.py  #CRUD logic
-│     ├── urls.py
-│     └── tests.py
+│     ├── admin.py                             #Django Admin integration for Task model
+│     ├── apps.py                              #App configuration (auto-created)
+│     ├── models.py                            #Database models (Task) 
+│     ├── serializers.py                       #DRF serializers — convert models <-> JSON for API
+│     ├── views.py                             #CRUD logic (List, Create, Update, Delete Task endpoints)
+│     ├── urls.py                              #API routes for /api/tasks/, /api/tasks/{id}/ etc.
+│     └── tests.py                             #Unit tests for API endpoints
 └── users/ # app for registration/login
 │     ├── __init__.py
-│     ├── serializers.py
-│     ├── views.py
-│     ├── urls.py
-│     └── tests.py
-├── requirements.txt                # Python dependencies
-├── .gitignore                      # Git ignore patterns
-└── README.md                       # This file
+│     ├── serializers.py                       #Handle register/login serializers
+│     ├── views.py                             #Login/Register API logic
+│     ├── urls.py                              #Auth routes (/api/register/, /api/login/)
+│     └── tests.py                             #Unit tests
+├── requirements.txt                           # Python dependencies list
+├── .gitignore                                 # Git ignore patterns
+└── README.md                                  # documentation — setup steps, API usage, test guide
 
 ```
 ## Check Code Coverage 
@@ -101,3 +102,22 @@ coverage html
 
 #specific file test
 python manage.py test users/tasks
+
+
+```
+## Urls of APIs
+
+Tasks: http://127.0.0.1:8000/api/tasks/
+
+Single task: http://127.0.0.1:8000/api/tasks/1/
+
+Auth register: http://127.0.0.1:8000/api/auth/register/
+
+Login: http://127.0.0.1:8000/api/auth/login/
+
+Admin: http://127.0.0.1:8000/admin/
+
+Swagger: http://127.0.0.1:8000/swagger/
+
+Please refer to Doc for testing of urls:https://docs.google.com/document/d/1MfjTtn6lylTEOYLm6jHLChc_HnmOgHnUaiNC9EPPlYo/edit?usp=sharing
+
