@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "88a8d2a6-12b9-4186-af1c-30594b9c78fd",
+		"name": "Task Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44601934",
+		"_collection_link": "https://pri-9520449.postman.co/workspace/pri's-Workspace~0d519b28-9e3f-48b6-8490-8329f4b9b7e2/collection/44601934-88a8d2a6-12b9-4186-af1c-30594b9c78fd?action=share&source=collection_link&creator=44601934"
+	},
+	"item": [
+		{
+			"name": "get task",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "POST /tasks:create a new task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks/\n",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /tasks/{id}:Retrieve details of a specific task",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /tasks/{id}:Update details of a specific task.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYwNzc4Njg5LCJpYXQiOjE3NjA3NzUwODksImp0aSI6IjE1MGVlZGU5OWU5YzQ3YmFhMjdiMjkzOGU3ODE1MDk5IiwidXNlcl9pZCI6IjMifQ.Sj1P5XBpnm3Ld1TXcmnuHB84weFVBMMQCXjAhljllSQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /tasks/{id}: Delete a specific task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYwNzc4Njg5LCJpYXQiOjE3NjA3NzUwODksImp0aSI6IjE1MGVlZGU5OWU5YzQ3YmFhMjdiMjkzOGU3ODE1MDk5IiwidXNlcl9pZCI6IjMifQ.Sj1P5XBpnm3Ld1TXcmnuHB84weFVBMMQCXjAhljllSQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks/1/\n",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"1",
+						"\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login to get jwt token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/login/\n",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login",
+						"\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register a new user Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Anmol\",\r\n  \"password\": \"my_pass_word_an\",\r\n  \"email\": \"anmol@gmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register a new user Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Anmol\",\r\n  \"password\": \"my_pass_word_an\",\r\n  \"email\": \"anmol@gmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

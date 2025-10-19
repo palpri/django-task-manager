@@ -119,5 +119,11 @@ Admin: http://127.0.0.1:8000/admin/
 
 Swagger: http://127.0.0.1:8000/swagger/
 
+Postman collection link:https://pri-9520449.postman.co/workspace/pri's-Workspace~0d519b28-9e3f-48b6-8490-8329f4b9b7e2/collection/44601934-88a8d2a6-12b9-4186-af1c-30594b9c78fd?action=share&creator=44601934
+
+Collection json file-(TaskManager.postman_collection.json)
+
 Please refer to Doc for testing of urls:https://docs.google.com/document/d/1MfjTtn6lylTEOYLm6jHLChc_HnmOgHnUaiNC9EPPlYo/edit?usp=sharing
+
+
 
