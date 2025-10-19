@@ -4,3 +4,4 @@ djangorestframework-simplejwt>=5.2.2
 drf-yasg>=1.21.6
 PyYAML
 psycopg2-binary>=2.9
+django-filter
