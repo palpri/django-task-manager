@@ -10,21 +10,17 @@ class TaskListCreateAPIView(generics.ListCreateAPIView):
     
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['completed'] 
+    permission_classes = [permissions.IsAuthenticated]
 
-
-# Allow list to be read by anyone; creation requires authentication
-    def get_permissions(self):
-       if self.request.method == 'POST':
-          return [permissions.IsAuthenticated()]
-       return [permissions.AllowAny()]
 
 
 class TaskRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 
-    def get_permissions(self):
-        if self.request.method in ['PUT', 'PATCH', 'DELETE']:
-            return [permissions.IsAuthenticated()]
-        return [permissions.AllowAny()]
+    # def get_permissions(self):
+    #     if self.request.method in ['PUT', 'PATCH', 'DELETE']:
+    #         return [permissions.IsAuthenticated()]
+    #     return [permissions.AllowAny()]
